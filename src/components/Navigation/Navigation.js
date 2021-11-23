@@ -1,7 +1,7 @@
 import s from './Navigation.module.css'
 import Searchbar from '../Searchbar/Searchbar'
 import Button from '../Button/Button'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Navigation = () => (
   <>
@@ -15,8 +15,6 @@ const Navigation = () => (
       <Button />
     </nav>
     <hr />
-
-    <Outlet />
   </>
 )
 
