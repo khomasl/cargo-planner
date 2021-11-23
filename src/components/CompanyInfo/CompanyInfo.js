@@ -4,6 +4,7 @@ import { notifyInfo } from '../../components/notify'
 import s from './CompanyInfo.module.css'
 
 export default function CompanyInfo({ company }) {
+  console.log('CompanyInfo', company)
   const { id, name, email, boxes } = company
   const { setCurrentCompany } = useApp()
   const [cargoBoxes, setCargoBoxes] = useState(boxes)
