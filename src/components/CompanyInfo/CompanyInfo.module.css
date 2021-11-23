@@ -1,0 +1,30 @@
+.info {
+  display: block;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100vw;
+  height: 100vh;
+  border-style: groove;
+  border-color: #3f51b5;
+  /* overflow-y: scroll; */
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.reqCargo {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.input {
+  border-style: groove;
+  border-color: #3f51b5;
+  font-size: 16px;
+  padding: 3px;
+  margin-bottom: 10px;
+}

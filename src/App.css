@@ -1,0 +1,17 @@
+.App {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.contentApp {
+  display: flex;
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.Loader {
+  margin: auto;
+}

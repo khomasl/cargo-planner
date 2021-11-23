@@ -1,0 +1,11 @@
+.list {
+  margin: 0;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  min-width: 280px;
+  border-style: groove;
+  border-color: #3f51b5;
+  color: #3f51b5;
+  height: 100vh;
+  overflow-y: scroll;
+}
