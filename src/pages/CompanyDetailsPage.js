@@ -17,7 +17,9 @@ export default function CompanyDetailsPage() {
   return (
     <>
       <Suspense fallback={<Loader />}>
-        {companyName && <CompanyInfo company={findCompany(companyName)} />}
+        {companyName !== '' && (
+          <CompanyInfo company={findCompany(companyName)} />
+        )}
       </Suspense>
     </>
   )
