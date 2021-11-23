@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react'
 import { useParams } from 'react-router'
 import { useApp } from '../hooks/useApp'
 import Loader from '../components/Loader/Loader'
-import CompanyInfo from '../components/CompanyInfo/CompanyInfo'
-// const CompanyInfo = lazy(() => import('../components/CompanyInfo/CompanyInfo'))
+// import CompanyInfo from '../components/CompanyInfo/CompanyInfo'
+const CompanyInfo = lazy(() => import('../components/CompanyInfo/CompanyInfo'))
 
 export default function CompanyDetailsPage() {
   const { companies } = useApp()
@@ -18,9 +18,9 @@ export default function CompanyDetailsPage() {
 
   return (
     <>
-      {/* <Suspense fallback={<Loader />}> */}
-      {company && <CompanyInfo company={company} />}
-      {/* </Suspense> */}
+      <Suspense fallback={<Loader />}>
+        {company && <CompanyInfo company={company} />}
+      </Suspense>
     </>
   )
 }
