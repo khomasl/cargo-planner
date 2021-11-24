@@ -2,6 +2,7 @@ import axios from 'axios'
 import { notifyError } from '../components/notify'
 
 // axios.defaults.baseURL = 'http://localhost:4040'
+axios.defaults.baseURL = '/cargo-planner'
 
 async function fetchShipments() {
   try {
