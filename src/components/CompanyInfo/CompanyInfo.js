@@ -4,22 +4,18 @@ import { notifyInfo } from '../../components/notify'
 import s from './CompanyInfo.module.css'
 
 export default function CompanyInfo({ company }) {
-  console.log('CompanyInfo', company)
   const { id, name, email, boxes } = company
   const { setCurrentCompany } = useApp()
   const [cargoBoxes, setCargoBoxes] = useState(boxes)
 
-  useEffect(() => {
-    setCargoBoxes(boxes)
-    setCurrentCompany(company)
-  }, [company])
+  useEffect(() => setCargoBoxes(boxes), [company])
 
   const handleSubmit = useCallback((e) => e.preventDefault(), [])
 
   const handleChange = useCallback((e) => {
     setCargoBoxes(e.target.value)
     setCurrentCompany({ ...company, boxes: e.target.value })
-  })
+  }, [])
 
   const calculateRequiredCargo = (boxes) => {
     const RequiredCargo = boxes
@@ -34,7 +30,8 @@ export default function CompanyInfo({ company }) {
               ),
         )
       : 0
-    return RequiredCargo ? RequiredCargo : ''
+
+    return RequiredCargo ?? ''
   }
 
   return (

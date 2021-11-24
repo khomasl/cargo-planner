@@ -9,13 +9,9 @@ export default function Button() {
   const findIndexCompanyById = (id) =>
     companies.indexOf(companies.find((company) => company.id === id))
 
-  const changeCompanies = () => {
-    // console.log('companiesBtnSave :>> ', companies)
-    // console.log('currentCompanyBtnSave :>> ', currentCompany)
+  const changeCompanies = (currentCompany) => {
     if (!currentCompany) return companies
     const idx = findIndexCompanyById(currentCompany.id)
-    // console.log('idx :>> ', idx)
-    if (idx === -1) return companies
     return [
       ...companies.slice(0, idx),
       currentCompany,
@@ -33,9 +29,10 @@ export default function Button() {
   )
 
   const handleSaveBtnClick = useCallback(() => {
-    setCompanies(changeCompanies())
-    window.localStorage.setItem('companies', JSON.stringify(companies))
-  }, [companies])
+    const changedCompanies = changeCompanies(currentCompany)
+    setCompanies(changedCompanies)
+    window.localStorage.setItem('companies', JSON.stringify(changedCompanies))
+  }, [currentCompany, companies])
 
   return (
     <div>
