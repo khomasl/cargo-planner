@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { notifyError } from '../components/notify'
 
-axios.defaults.baseURL = 'http://localhost:4040'
+// axios.defaults.baseURL = 'http://localhost:4040'
 
 async function fetchShipments() {
   try {
