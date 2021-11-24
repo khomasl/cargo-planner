@@ -6,7 +6,7 @@ axios.defaults.baseURL = '/cargo-planner'
 
 async function fetchShipments() {
   try {
-    const result = await axios.get('/shipments')
+    const result = await axios.get('/shipments.json')
     return await result.data
   } catch (err) {
     notifyError(err.massage)
