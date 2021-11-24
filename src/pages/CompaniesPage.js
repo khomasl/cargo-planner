@@ -19,16 +19,13 @@ export default function CompaniesPage() {
 
   return (
     <div className="contentApp">
-      {companies.length > 0 && (
-        // <div className="contentApp">
+      {companies && (
         <>
           <CompaniesList companies={filteredCompaniesByName()} />
 
           <Routes>
             <Route path="/:companyName" element={<CompanyDetailsPage />} />
           </Routes>
-
-          {/* </div> */}
         </>
       )}
     </div>
