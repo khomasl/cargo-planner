@@ -1,15 +1,15 @@
 {
   "files": {
     "Companies Page.css": "/cargo-planner/static/css/Companies Page.45df86f0.chunk.css",
-    "Companies Page.js": "/cargo-planner/static/js/Companies Page.1c355a8a.chunk.js",
-    "Companies Page.js.map": "/cargo-planner/static/js/Companies Page.1c355a8a.chunk.js.map",
+    "Companies Page.js": "/cargo-planner/static/js/Companies Page.d2b3155c.chunk.js",
+    "Companies Page.js.map": "/cargo-planner/static/js/Companies Page.d2b3155c.chunk.js.map",
     "Company Details Page.js": "/cargo-planner/static/js/Company Details Page.4903ea68.chunk.js",
     "Company Details Page.js.map": "/cargo-planner/static/js/Company Details Page.4903ea68.chunk.js.map",
     "main.css": "/cargo-planner/static/css/main.c459b231.chunk.css",
     "main.js": "/cargo-planner/static/js/main.24cdc6db.chunk.js",
     "main.js.map": "/cargo-planner/static/js/main.24cdc6db.chunk.js.map",
-    "runtime-main.js": "/cargo-planner/static/js/runtime-main.26ad6809.js",
-    "runtime-main.js.map": "/cargo-planner/static/js/runtime-main.26ad6809.js.map",
+    "runtime-main.js": "/cargo-planner/static/js/runtime-main.2adfb79e.js",
+    "runtime-main.js.map": "/cargo-planner/static/js/runtime-main.2adfb79e.js.map",
     "static/css/4.87f0ab88.chunk.css": "/cargo-planner/static/css/4.87f0ab88.chunk.css",
     "static/js/4.786332ad.chunk.js": "/cargo-planner/static/js/4.786332ad.chunk.js",
     "static/js/4.786332ad.chunk.js.map": "/cargo-planner/static/js/4.786332ad.chunk.js.map",
@@ -24,7 +24,7 @@
     "static/js/4.786332ad.chunk.js.LICENSE.txt": "/cargo-planner/static/js/4.786332ad.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.26ad6809.js",
+    "static/js/runtime-main.2adfb79e.js",
     "static/css/4.87f0ab88.chunk.css",
     "static/js/4.786332ad.chunk.js",
     "static/css/main.c459b231.chunk.css",
