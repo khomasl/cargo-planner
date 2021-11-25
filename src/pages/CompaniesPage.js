@@ -19,7 +19,7 @@ export default function CompaniesPage() {
 
   return (
     <div className="contentApp">
-      {companies.length > 0 && (
+      {companies && (
         <>
           <CompaniesList companies={filteredCompaniesByName()} />
 
