@@ -3,7 +3,7 @@ import { notifyError } from '../components/notify'
 
 // axios.defaults.baseURL = 'http://localhost:4040'
 axios.defaults.baseURL =
-  'https://raw.githubusercontent.com/khomasl/cargo-planner/main'
+  'https://raw.githubusercontent.com/khomasl/cargo-planner/main/src/services'
 
 async function fetchShipments() {
   try {
