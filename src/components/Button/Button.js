@@ -1,9 +1,9 @@
 import { useCallback } from 'react'
 import { useApp } from '../../hooks/useApp'
 import fetchShipments from '../../services/shipments-api'
-import s from './Button.module.css'
+import s from './Button.module.scss'
 
-export default function Button() {
+const Button = () => {
   const { companies, setCompanies, currentCompany } = useApp()
 
   const findIndexCompanyById = (id) =>
@@ -35,13 +35,15 @@ export default function Button() {
   }, [currentCompany, companies])
 
   return (
-    <div>
+    <>
       <button type="button" className={s.btn} onClick={handleLoadBtnClick}>
         Load
       </button>
       <button type="button" className={s.btn} onClick={handleSaveBtnClick}>
         Save
       </button>
-    </div>
+    </>
   )
 }
+
+export default Button

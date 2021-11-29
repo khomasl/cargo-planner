@@ -1,9 +1,9 @@
 import { useState, useCallback, useEffect } from 'react'
 import { useApp } from '../../hooks/useApp'
 import { notifyInfo } from '../../components/notify'
-import s from './CompanyInfo.module.css'
+import s from './CompanyInfo.module.scss'
 
-export default function CompanyInfo({ company }) {
+const CompanyInfo = ({ company }) => {
   const { id, name, email, boxes } = company
   const { setCurrentCompany } = useApp()
   const [cargoBoxes, setCargoBoxes] = useState(boxes)
@@ -21,16 +21,18 @@ export default function CompanyInfo({ company }) {
     const RequiredCargo = boxes
       ? Math.ceil(
           0.1 *
-            boxes
-              .split(',')
-              .reduce((previousValue, currentValue) =>
-                currentValue <= 10
+            boxes.split(',').reduce(
+              (previousValue, currentValue) =>
+                Number(currentValue) <= 10
                   ? Number(previousValue) + Number(currentValue)
-                  : notifyInfo('Через запятую числа (значение - не больше 10)'),
-              ),
+                  : null,
+              // : notifyInfo('Через запятую числа (значение - не больше 10)'),
+            ),
         )
       : 0
 
+    // if (isNaN(RequiredCargo))
+    //   notifyInfo('Через запятую числа (значение - не больше 10)')
     return RequiredCargo ?? ''
   }
 
@@ -42,14 +44,16 @@ export default function CompanyInfo({ company }) {
       </a>
       <p>
         Number of required cargo bays:{' '}
-        <span className={s.reqCargo}>{calculateRequiredCargo(cargoBoxes)}</span>
+        <span className={s.info__reqCargo}>
+          {calculateRequiredCargo(cargoBoxes)}
+        </span>
       </p>
-      <form onSubmit={handleSubmit}>
-        <label className={s.label} htmlFor={id}>
+      <form className={s.form} onSubmit={handleSubmit}>
+        <label className={s.form__label} htmlFor={id}>
           Cargo boxes
         </label>
         <input
-          className={s.input}
+          className={s.form__input}
           type="text"
           name="number"
           id={id}
@@ -63,3 +67,5 @@ export default function CompanyInfo({ company }) {
     </div>
   )
 }
+
+export default CompanyInfo

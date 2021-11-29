@@ -1,16 +1,19 @@
 import { NavLink } from 'react-router-dom'
-import s from './CompanyItem.module.css'
+import s from './CompanyItem.module.scss'
 
-const setActiveLink = ({ isActive }) => (isActive ? s.activeLink : undefined)
+const setActiveLink = ({ isActive }) => {
+  return isActive ? s.activeLink : s.link
+}
 
-export default function CompanyItem({ company }) {
+const CompanyItem = ({ company }) => {
   const { id, name } = company
 
   return (
     <li key={id} className={s.item}>
-      <NavLink to={name} className={s.link} style={{ setActiveLink }}>
+      <NavLink to={name} className={setActiveLink}>
         {name}
       </NavLink>
     </li>
   )
 }
+export default CompanyItem

@@ -9,7 +9,7 @@ const CompanyDetailsPage = lazy(() =>
   ),
 )
 
-export default function CompaniesPage() {
+const CompaniesPage = () => {
   const { companies, searchValue } = useApp()
 
   const filteredCompaniesByName = () =>
@@ -31,3 +31,5 @@ export default function CompaniesPage() {
     </div>
   )
 }
+
+export default CompaniesPage

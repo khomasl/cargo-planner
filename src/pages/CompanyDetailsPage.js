@@ -5,7 +5,7 @@ import Loader from '../components/Loader/Loader'
 // import CompanyInfo from '../components/CompanyInfo/CompanyInfo'
 const CompanyInfo = lazy(() => import('../components/CompanyInfo/CompanyInfo'))
 
-export default function CompanyDetailsPage() {
+const CompanyDetailsPage = () => {
   const { companies } = useApp()
   const { companyName } = useParams()
 
@@ -24,3 +24,5 @@ export default function CompanyDetailsPage() {
     </>
   )
 }
+
+export default CompanyDetailsPage

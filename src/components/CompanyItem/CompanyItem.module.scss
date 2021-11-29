@@ -1,0 +1,15 @@
+.item {
+  display: flex;
+  padding: 5px;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  color: #303f9f;
+}
+
+.activeLink {
+  composes: link;
+  color: red;
+}

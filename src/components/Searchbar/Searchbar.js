@@ -1,8 +1,8 @@
 import { useCallback } from 'react'
-import s from './Searchbar.module.css'
 import { useApp } from '../../hooks/useApp'
+import s from './Searchbar.module.scss'
 
-export default function Searchbar() {
+const Searchbar = () => {
   const { searchValue, setSearchValue } = useApp()
 
   const handleChange = useCallback((e) => setSearchValue(e.target.value), [
@@ -19,7 +19,7 @@ export default function Searchbar() {
         </button> */}
 
         <input
-          className={s.SearchFormInput}
+          className={s.SearchForm__Input}
           type="text"
           name="searchValue"
           value={searchValue}
@@ -32,3 +32,5 @@ export default function Searchbar() {
     </header>
   )
 }
+
+export default Searchbar
