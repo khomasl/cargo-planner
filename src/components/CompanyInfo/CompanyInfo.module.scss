@@ -13,6 +13,13 @@
     font-weight: 700;
     color: #3f51b5;
   }
+
+  &__isNotValidation {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: red;
+  }
 }
 
 .form {

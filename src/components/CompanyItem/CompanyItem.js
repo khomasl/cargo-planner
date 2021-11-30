@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import s from './CompanyItem.module.scss'
 
-const setActiveLink = ({ isActive }) => {
+const setLink = ({ isActive }) => {
   return isActive ? s.activeLink : s.link
 }
 
@@ -10,7 +10,7 @@ const CompanyItem = ({ company }) => {
 
   return (
     <li key={id} className={s.item}>
-      <NavLink to={name} className={setActiveLink}>
+      <NavLink to={name} className={setLink}>
         {name}
       </NavLink>
     </li>

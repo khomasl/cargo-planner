@@ -1,12 +1,12 @@
 import { useState, useCallback, useEffect } from 'react'
 import { useApp } from '../../hooks/useApp'
-import { notifyInfo } from '../../components/notify'
 import s from './CompanyInfo.module.scss'
 
 const CompanyInfo = ({ company }) => {
   const { id, name, email, boxes } = company
   const { setCurrentCompany } = useApp()
   const [cargoBoxes, setCargoBoxes] = useState(boxes)
+  let isNotValidation = false
 
   useEffect(() => setCargoBoxes(boxes), [company])
 
@@ -18,22 +18,20 @@ const CompanyInfo = ({ company }) => {
   }, [])
 
   const calculateRequiredCargo = (boxes) => {
-    const RequiredCargo = boxes
-      ? Math.ceil(
-          0.1 *
-            boxes.split(',').reduce(
-              (previousValue, currentValue) =>
-                Number(currentValue) <= 10
-                  ? Number(previousValue) + Number(currentValue)
-                  : null,
-              // : notifyInfo('Через запятую числа (значение - не больше 10)'),
-            ),
-        )
-      : 0
+    const arrBoxes = boxes?.split(',') ?? []
+    isNotValidation = arrBoxes.some(
+      (el) => el !== ',' && el !== '.' && !(Number(el) <= 10),
+    )
 
-    // if (isNaN(RequiredCargo))
-    //   notifyInfo('Через запятую числа (значение - не больше 10)')
-    return RequiredCargo ?? ''
+    if (isNotValidation || !boxes) return ''
+
+    return Math.ceil(
+      0.1 *
+        arrBoxes.reduce(
+          (previousValue, currentValue) =>
+            Number(previousValue) + Number(currentValue),
+        ),
+    )
   }
 
   return (
@@ -60,10 +58,15 @@ const CompanyInfo = ({ company }) => {
           value={cargoBoxes}
           onChange={handleChange}
           pattern="^[0-9]?[.,]?[0-9]?[,]?$"
-          title="Через запятую числа (значение - не больше 10)"
+          title="Numbers separated by commas (the value is no more than 10)"
           required
         />
       </form>
+      {isNotValidation && (
+        <p className={s.info__isNotValidation}>
+          Numbers separated by commas. <br /> The value is no more than 10.
+        </p>
+      )}
     </div>
   )
 }
