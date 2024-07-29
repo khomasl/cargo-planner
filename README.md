@@ -60,3 +60,16 @@ Another shipment `6.2,5.9,4,6.9,4.4,1.7,9.5` would require 4 cargo bays.
 ## Other
 
 Author here, I appreciate any free time you spend on this. I put the assignment together around 3 areas: layout (HTML, CSS), library/framework knowledge (React, Vue.js, Angular) and your thinking in code. My advice is to first start with these areas and continue from there.
+
+## How to Use
+Clone
+
+git clone https://github.com/khomasl/cargo-planner.git
+cd cargo-planner
+npm i
+Then, run in development mode:
+
+npm run dev
+
+## Demo
+On Netlify - https://khomasl-cargo-planer.netlify.app
