@@ -63,14 +63,22 @@ Author here, I appreciate any free time you spend on this. I put the assignment 
 
 ## How to Use
 Clone
+```bash
 git clone https://github.com/khomasl/cargo-planner.git
+```
 
+```bash
 cd cargo-planner
+```
 
+```bash
 npm i
+```
 
 Then, run in development mode:
+```bash
 npm run dev
+```
 
 ## Demo
 On Netlify - https://khomasl-cargo-planer.netlify.app
