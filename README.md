@@ -67,10 +67,10 @@ Clone
 git clone https://github.com/khomasl/cargo-planner.git
 ```
 
+Then
 ```bash
 cd cargo-planner
 ```
-
 ```bash
 npm i
 ```
