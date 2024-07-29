@@ -63,12 +63,13 @@ Author here, I appreciate any free time you spend on this. I put the assignment 
 
 ## How to Use
 Clone
-
 git clone https://github.com/khomasl/cargo-planner.git
-cd cargo-planner
-npm i
-Then, run in development mode:
 
+cd cargo-planner
+
+npm i
+
+Then, run in development mode:
 npm run dev
 
 ## Demo
